@@ -107,7 +107,8 @@ static const int GRID_COLUMNS = 10;
                 // go through the column to the left of the current cell, the column the cell is in, and the column to the right of the current cell
                 for (int y = (j - 1); y <= (j + 1); j++) {
                     // check that the cell we're checking isn't off the screen
-                    BOOL isIndexValid = [self isIndexValidForX:x andY:y];
+                    BOOL isIndexValid;
+                    isIndexValid = [self isIndexValidForX:x andY:y];
                     
                     // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
                     if (!((x == i) && (y == j)) && isIndexValid) {
